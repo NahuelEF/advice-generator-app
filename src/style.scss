@@ -1,2 +1,113 @@
-/* COLORS */
-$primary-light-cyan: hls(193, 38%, 86%);
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+
+$primary-light-cyan: hsl(193, 38%, 86%);
+$primary-neon-green: hsl(150, 100%, 66%);
+
+$neutral-grayish-blue: hsl(217, 19%, 38%);
+$neutral-dark-grayish-blue: hsl(217, 19%, 24%);
+$neutral-dark-blue: hsl(218, 23%, 16%);
+$box-shadow: hsla(150, 100%, 66%, 0.6);
+
+$font-size: 28px;
+
+@function size($value) {
+  @return $value * $font-size;
+}
+
+@mixin center($column: "false") {
+  display: flex;
+  @if ($column == "true") {
+    flex-direction: column;
+  }
+  align-items: center;
+  justify-content: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  font: {
+    family: "Manrope", sans-serif;
+    size: size(1);
+    weight: 800;
+  }
+  background-color: $neutral-dark-blue;
+  @include center("true");
+  cursor: default;
+}
+
+.main {
+  position: relative;
+  max-width: 540px;
+  border-radius: size(0.5);
+  margin: size(2);
+  padding: size(1.5);
+  background-color: $neutral-dark-grayish-blue;
+
+  @include center("true");
+  gap: size(1);
+
+  &__title {
+    color: $primary-neon-green;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 5px;
+    font-size: size(0.5);
+  }
+
+  & hr {
+    width: 100%;
+    border: 1px solid $neutral-grayish-blue;
+    text-align: center;
+  }
+
+  &__paragraph {
+    color: $primary-light-cyan;
+    text-align: center;
+  }
+
+  &__button {
+    position: absolute;
+    bottom: -30px;
+    border: none;
+    border-radius: 50%;
+    padding: size(0.6);
+    background-color: $primary-neon-green;
+    @include center();
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+}
+
+.footer {
+  width: 100%;
+  font-size: size(0.5);
+  color: $primary-light-cyan;
+  @include center("true");
+
+  &__paragraph {
+    color: inherit;
+    text-align: center;
+  }
+
+  &__link {
+    color: $primary-neon-green;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
