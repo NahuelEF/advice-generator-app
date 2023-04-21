@@ -1,0 +1,14 @@
+$light-cyan: hsl(193, 38%, 86%);
+$neon-green: hsl(150, 100%, 66%);
+$grayish-blue: hsl(217, 19%, 38%);
+$dark-grayish-blue: hsl(217, 19%, 24%);
+$dark-blue: hsl(218, 23%, 16%);
+
+:root {
+  --primary-light-cyan: #{$light-cyan};
+  --primary-neon-green: #{$neon-green};
+
+  --neutral-grayish-blue: #{$grayish-blue};
+  --neutral-dark-grayish-blue: #{$dark-grayish-blue};
+  --neutral-dark-blue: #{$dark-blue};
+}

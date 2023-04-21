@@ -1,0 +1,60 @@
+@use "colors";
+@use "mixins";
+
+.main {
+  position: relative;
+  max-width: 540px;
+  border-radius: mixins.convertToEM(14);
+  margin: mixins.convertToEM(14);
+  padding: mixins.convertToEM(42);
+  background-color: var(--neutral-dark-grayish-blue);
+
+  @include mixins.displayFlex(true);
+  gap: mixins.convertToEM();
+
+  &__title {
+    color: var(--primary-neon-green);
+    text: {
+      transform: uppercase;
+      align: center;
+    }
+    letter-spacing: 5px;
+    font-size: mixins.convertToEM(14);
+  }
+
+  &__paragraph {
+    color: var(--primary-light-cyan);
+    text-align: center;
+  }
+
+  &__button {
+    position: absolute;
+    bottom: -30px;
+    border: none;
+    border-radius: 50%;
+    padding: mixins.convertToEM();
+    background-color: var(--primary-neon-green);
+    @include mixins.displayFlex();
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.4s;
+
+    &:hover {
+      @include mixins.boxShadow(0, 0, 1em, 0.5em, colors.$neon-green);
+    }
+  }
+}
+
+.divider {
+  width: 100%;
+  height: 16px;
+  margin-bottom: mixins.convertToEM(22.4);
+  background: {
+    image: url(../images/pattern-divider-desktop.svg);
+    position: center;
+    size: cover;
+    repeat: no-repeat;
+  }
+}

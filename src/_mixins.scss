@@ -1,0 +1,26 @@
+@use "sass:math";
+@use "sass:color";
+
+$font-size: 28;
+
+@function convertToEM($pixeles: $font-size) {
+  $size: math.div($pixeles, $font-size);
+  @return #{$size}em;
+}
+
+@mixin displayFlex($column: false) {
+  display: flex;
+  @if ($column) {
+    flex-direction: column;
+  }
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin boxShadow($x, $y, $blur, $spread, $color) {
+  $shadow: change-color(
+    $color: $color,
+    $alpha: 0.6,
+  );
+  box-shadow: $x $y $blur $spread $shadow;
+}

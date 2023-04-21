@@ -1,0 +1,25 @@
+@use "colors";
+@use "mixins";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  font: {
+    family: "Manrope", sans-serif;
+    size: #{mixins.$font-size}px;
+    weight: 800;
+  }
+  background-color: var(--neutral-dark-blue);
+  @include mixins.displayFlex(true);
+  cursor: default;
+}
