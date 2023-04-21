@@ -5,10 +5,10 @@
   position: relative;
   max-width: 540px;
   border-radius: mixins.convertToEM(14);
-  margin: mixins.convertToEM(14);
-  padding: mixins.convertToEM(42);
+  margin: mixins.convertToEM(16);
+  padding: mixins.convertToEM(52) mixins.convertToEM(48);
   background-color: var(--neutral-dark-grayish-blue);
-
+  @include mixins.boxShadow(0, 0, 2em, 0.5em, colors.$dark-blue);
   @include mixins.displayFlex(true);
   gap: mixins.convertToEM();
 
@@ -25,11 +25,12 @@
   &__paragraph {
     color: var(--primary-light-cyan);
     text-align: center;
+    font-size: mixins.convertToEM();
   }
 
   &__button {
     position: absolute;
-    bottom: -30px;
+    bottom: -25px;
     border: none;
     border-radius: 50%;
     padding: mixins.convertToEM();
@@ -45,16 +46,24 @@
       @include mixins.boxShadow(0, 0, 1em, 0.5em, colors.$neon-green);
     }
   }
+
+  @include mixins.media() {
+    padding: mixins.convertToEM(44) mixins.convertToEM(24);
+  }
 }
 
 .divider {
   width: 100%;
   height: 16px;
-  margin-bottom: mixins.convertToEM(22.4);
+  margin-bottom: mixins.convertToEM(20);
   background: {
     image: url(../images/pattern-divider-desktop.svg);
     position: center;
     size: cover;
     repeat: no-repeat;
+  }
+
+  @include mixins.media() {
+    background-image: url(../images/pattern-divider-mobile.svg);
   }
 }

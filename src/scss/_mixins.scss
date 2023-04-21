@@ -24,3 +24,9 @@ $font-size: 28;
   );
   box-shadow: $x $y $blur $spread $shadow;
 }
+
+@mixin media() {
+  @media screen and (max-width: 425px) {
+    @content;
+  }
+}
