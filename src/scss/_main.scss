@@ -9,8 +9,7 @@
   padding: mixins.convertToEM(52) mixins.convertToEM(48);
   background-color: var(--neutral-dark-grayish-blue);
   @include mixins.boxShadow(0, 0, 2em, 0.5em, colors.$dark-blue);
-  @include mixins.displayFlex(true);
-  gap: mixins.convertToEM();
+  @include mixins.displayFlex(true, mixins.convertToEM());
 
   &__title {
     color: var(--primary-neon-green);
@@ -32,6 +31,7 @@
     position: absolute;
     bottom: -25px;
     border: none;
+    z-index: 1;
     border-radius: 50%;
     padding: mixins.convertToEM();
     background-color: var(--primary-neon-green);

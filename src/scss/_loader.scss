@@ -1,0 +1,34 @@
+@use "mixins";
+
+.loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: mixins.convertToEM(14);
+  background-color: var(--neutral-dark-grayish-blue);
+  display: none;
+
+  &__spinner {
+    width: mixins.convertToEM(48);
+    height: mixins.convertToEM(48);
+    border: 5px solid #fff;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+
+  &--active {
+    @include mixins.displayFlex();
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

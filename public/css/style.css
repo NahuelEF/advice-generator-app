@@ -60,6 +60,7 @@ body {
   position: absolute;
   bottom: -25px;
   border: none;
+  z-index: 1;
   border-radius: 50%;
   padding: 1em;
   background-color: var(--primary-neon-green);
@@ -116,6 +117,39 @@ body {
 }
 .footer__link:hover {
   text-decoration: underline;
+}
+
+.loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5em;
+  background-color: var(--neutral-dark-grayish-blue);
+  display: none;
+}
+.loader__spinner {
+  width: 1.7142857143em;
+  height: 1.7142857143em;
+  border: 5px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader--active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
