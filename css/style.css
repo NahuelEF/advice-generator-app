@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --primary-light-cyan: hsl(193, 38%, 86%);
   --primary-neon-green: hsl(150, 100%, 66%);
@@ -55,6 +56,12 @@ body {
   color: var(--primary-light-cyan);
   text-align: center;
   font-size: 1em;
+}
+.main__paragraph::before {
+  content: "“";
+}
+.main__paragraph::after {
+  content: "”";
 }
 .main__button {
   position: absolute;
